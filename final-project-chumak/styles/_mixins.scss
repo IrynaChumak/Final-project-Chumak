@@ -1,0 +1,6 @@
+@import '../fonts/fonts.css';
+@mixin font-style($ff, $fs, $fc) {
+  font-family: $ff;
+  font-size: $fs;
+  color: $fc;
+}

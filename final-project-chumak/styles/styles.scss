@@ -1,0 +1,854 @@
+@import './variables';
+@import './mixins';
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header{
+  width: 100%;
+  height: 100vh;
+  background-image: url(../imgs/Background-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center;
+}
+.header-container{
+    padding: 5% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  .header-btns-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-self: flex-start;
+    margin-bottom: 150px;      
+    .logo {
+      visibility: collapse;
+      position: absolute;
+       @include font-style('Montserrat-bold', 20px, #FFFFFF);
+    }      
+    .log-in-btn,
+    .sing-up-btn {
+       @include font-style('Montserrat-regular', 14px, #FFFFFF);
+      padding: 10px 19px;
+      background-color: transparent;
+      border-radius: 40px;
+      cursor: pointer;
+    }      
+    .sing-up-btn {
+       border: 2px solid #FFFFFF;
+    }      
+    .log-in-btn {
+      border: transparent;
+    }
+  }
+}
+.header-info{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  .logo{
+    margin-bottom: 26px;
+    @include font-style('Montserrat-bold',20px,#FFFFFF);
+  }
+  .title{
+    text-align: center;
+    margin-bottom: 6px;
+    line-height: 37px;
+    @include font-style('Montserrat-bold', 30px,#FFFFFF)
+  }
+  .subtitle{
+    text-align: center;
+    margin-bottom: 15px;  
+    font-weight: 300;  
+    padding: 0 30px;
+    @include font-style('Roboto-light', 18px, #F7F3F2)
+  }
+  .button{
+    width: 90%;
+    max-width: 285px;
+    padding: 11px 46px;
+    border: none;
+    border-radius: 40px;
+    background-color: $btn-bg;
+    margin-bottom: 0;
+    @include font-style('Montserrat-bold', 14px, #FFFFFF);
+    cursor: pointer;
+  }
+}
+@media screen and (min-width:700px) {
+  header {
+    background-image: url(..//imgs/Background.jpg);
+  }
+  .header-container {
+    width: 87%;
+    padding: 40px 0;
+    margin: 0 auto;
+      .wrap-btn{
+      display: flex;
+    }
+    .header-btns-wrap {
+      justify-content: space-between;
+      margin-bottom: 145px;
+      align-items: center;
+      .logo {
+        visibility: visible;
+        position: relative;
+        width: 152px;
+      }     
+    }
+  }
+  .header-info {
+    .logo {
+      visibility: collapse;
+      position: absolute;
+    }  
+    .title {
+      margin-bottom: 29px;
+      line-height: 63px;
+      padding: 0 50px;
+      @include font-style('Montserrat-bold', 52px, #FFFFFF);
+    }
+    .subtitle {      
+      margin-bottom: 33px;      
+      @include font-style('Roboto-light', 24px, #F7F3F2)
+    }  
+    .button {
+      max-width: 225px;
+      padding: 11px 19px;
+      border: none;
+      margin-bottom: 0;
+    }
+  }
+}
+@media screen and (min-width: 1320px) {   
+    .header-container {
+      width: 63%;
+    }
+}
+/* main/ section about work*/
+main{
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-work{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+.work-info-container{
+  width: 100%;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .main-title h2{
+    text-align: center;
+    padding: 34px 0 15px 0;
+    @include font-style('Montserrat-bold', 22px,#444444 )
+  }   
+}
+.work-info-card {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 64px 30px 16px 20px ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.card-one{
+    background-image: url(../imgs/mobile/step-1-mobile.jpg);
+    @extend .work-info-card;
+    .work-info-btn {
+      margin-bottom: 30px;
+    }
+}
+.card-two {
+  background-image: url(..//imgs/mobile/step-2-mobile.jpg);
+  @extend .work-info-card;
+  .work-info-btn {
+    margin-top: 31px;
+    margin-bottom: 13px;
+  }
+}
+
+.card-three {
+  background-image: url(../imgs/mobile/stap-3-mobile.jpg);
+  @extend .work-info-card;
+  .work-info-btn {
+    margin-bottom: 30px;
+  }
+}
+.work-info-wrap{
+    .work-info-btn{          
+      background-color: $btn-bg;
+      padding: 5px  14px 3px 12px;      
+      letter-spacing: 2px;
+      border-radius: 40px;
+      line-height: 12px;
+      border: none;
+      @include font-style('Montserrat-regular', 10px, #FFFFFF);
+      cursor: pointer;
+    }
+    .title{
+      margin-top: 20px;
+      line-height: 14px;
+      @include font-style('Montserrat-bold', 24px, #FFFFFF)
+    }
+    .subtitle{
+      margin-top: 20px;
+      line-height: 14px;
+      @include font-style('Roboto-light', 14px, #E3E3E3)
+    }
+  }
+
+@media screen and (min-width:700px){
+  .work-info-container {
+    width: 100%;
+    .main-title h2 {
+      padding: 94px 0 35px 0;
+    }    
+  }
+  .work-info-card {
+    max-width: 32%;
+    height: 400px;
+    padding: 205px 20px 16px 20px;    
+    margin-bottom: 0;    
+  }
+  .card-one{
+    background-image: url(../imgs/tablet/first-line-tablet-1.jpg);    
+  }
+  .card-two {
+    background-image: url(..//imgs/tablet/first-line-tablet-2.jpg);
+    margin: 0 20px;    
+    .work-info-btn {
+      margin-top: 50px;
+      margin-bottom: 0;
+    }
+  }
+  
+  .card-three {
+    background-image: url(../imgs/tablet/first-line-tablet-3.jpg);    
+  }
+  .work-info-cards-container{
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1320px) { 
+  .work-info-container {
+    width: 100%;
+  
+    .main-title h2 {
+      padding: 94px 0 35px 0;
+    }
+  }  
+  .work-info-card {
+    max-width: 35%;
+    height: 400px;
+    padding: 219px 25px 21px 25px;
+    margin-bottom: 0;
+  }  
+  .card-one {
+    background-image: url(../imgs/desctop/desctop-1.jpg);    
+  }  
+  .card-two {
+    background-image: url(..//imgs/desctop/desctop-2.jpg);
+    margin: 0 20px;  
+    .work-info-btn {
+      margin-top: 31px;
+      margin-bottom: 0;
+    }
+  }  
+  .card-three {
+    background-image: url(../imgs/desctop/desctop-3.jpg);    
+  }
+  .work-info-cards-container {
+    width: 66.2%;
+  }    
+}
+/* section about employees*/
+.about-employees{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  .employees-main-title h2{
+    text-align: center;
+    padding: 36px 0 15px 0;
+    @include font-style('Montserrat-bold', 22px,#444444)
+  }
+}
+.employees-card-wrap-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+.employees-card-wrap-2{
+  @extend .employees-card-wrap-1;
+  .employees-card-2{
+    @extend .employees-card
+  }
+}
+.employees-card-wrap-1{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .employees-card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 0 32px;
+  }
+  .employees-img img{
+    border-radius: 50%;
+    margin-bottom: 17px;
+    position: relative;
+    
+  }
+  .employees-title h4{
+    line-height: 17px;
+    margin-bottom: 12px;
+    @include font-style('Montserrat-bold', 14px, #444444)
+  }
+  .employees-desc{
+    text-align: center;
+    margin-bottom: 12px;
+    @include font-style('Roboto-light', 14px, #666666)
+  }
+}
+.icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 8px;
+  position: relative;
+  top: -53px;
+  right: -88px;
+   
+}
+.red {
+  @extend .icon;
+  background-color: #FF4E50;
+}  
+.yellow {
+  @extend .icon;
+  background-color: #FFA710;
+  }  
+.green {
+  @extend .icon;
+  background-color: #19D4CA;
+}  
+.violet {
+  @extend .icon;
+  background-color: #667DF3;
+}
+.employees-btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  button{
+    max-width: 280px;
+    padding: 11px 69px;
+    border: 2px solid #FF4E50;
+    border-radius: 40px;
+    background-color:transparent;
+    @include font-style('Montserrat-bold', 14px, #FF4E50)
+  }
+}
+@media screen and (min-width:700px) {
+.about-employees {
+  .employees-main-title h2{
+    padding: 94px 0 35px 0;   
+  }
+}
+  .employees-card-wrap-2{
+    flex-direction: row;  
+    margin-bottom: 40px; 
+    justify-content: center; 
+  }
+  .employees-card-wrap-1 {
+    flex-direction: row;
+    justify-content: center;
+     
+    .employees-card {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 32px;
+      margin-bottom: 16px;
+    }
+  }
+  .employees-btn {  
+    button {
+      width: 180px;
+      padding: 11px 0;
+    }
+  }
+}
+@media screen and (min-width: 1320px) {
+  .about-employees {  
+    .employees-main-title h2 {
+      padding: 86px 0 35px 0;
+      @include font-style('Montserrat-bold', 26px, #444444)
+    }
+  }
+  .employees-card-wrap-main{
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .employees-card-wrap-2 {
+    flex-direction: row;
+    margin-bottom: 0;
+    align-items: flex-start;
+    .employees-card-2{
+      img{
+        margin-bottom: 0;
+      }
+      h4{
+        margin-top: 17px;
+      }
+      .icon{
+        top: -36px;
+        right: -88px;
+      }
+    }
+  }
+  
+  .employees-card-wrap-1 {
+    flex-direction: row;
+    align-items: flex-start;
+  
+    .employees-card {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom:0;
+    }
+  }
+}
+/* holiday activity section*/
+.holiday-activity-section{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .holiday-main-title h2{
+    text-align: center;
+    padding: 35px 0 33px 0;
+    line-height: 27px;
+    @include font-style('Montserrat-bold', 22px, #444444)
+  }
+}
+.holiday-card-main-wrap{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  padding: 0 10px;
+}
+.holiday-card-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  
+  .holiday-card{
+    min-height: 120px;
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 10px;    
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    h3{
+      text-align: center;
+        @include font-style('Montserrat-bold', 22px, #FFFFFF)
+    }    
+  }
+}
+.sport {
+  width: 100%;
+  padding: 33px 47px;
+  background-image: url(../imgs/mobile/sport.jpg);
+}
+.health {
+  width: 100%;
+  padding: 33px 47px;
+  background-image: url(../imgs/mobile/health.jpg); 
+}
+.extreme{
+  width: 100%;
+  padding: 33px 47px;
+  background-image: url(../imgs/mobile/extreme.jpg);
+}
+.games{
+  width: 100%;
+  background-image: url(../imgs/mobile/games.jpg);
+}
+.culture{
+  width: 100%;
+  background-image: url(../imgs/mobile/culture.jpg);
+}
+.relax{
+  width: 100%;
+  background-image: url(../imgs/mobile/relax.jpg);
+}
+.traveling{
+  width: 100%;
+  background-image: url(../imgs/mobile/traveling.jpg);
+}
+@media screen and (min-width: 700px) {
+  .holiday-activity-section {  
+    .holiday-main-title h2{
+      padding: 94px 0 35px 0;
+    }
+  }
+  .holiday-card-main-wrap{
+    width: 100%;
+  
+  }
+  .holiday-card-wrap {   
+    flex-direction: row;   
+    justify-content: center; 
+    .holiday-card {     
+      min-height: 310px;
+      margin-bottom: 20px;
+      }
+  }  
+  .sport {
+    width: 31.5%;
+    padding: 128px 15px;
+    background-image: url(../imgs/tablet/Sport.jpg);
+  }  
+  .health {
+    width: 31.5%;
+    padding: 128px 15px;
+    margin: 0 20px;
+    background-image: url(../imgs/tablet/health.jpg);
+  }  
+  .extreme {
+    width: 31.5%;
+    padding: 128px 15px;
+    background-image: url(../imgs/tablet/Extreme.jpg);
+  }  
+  .games {
+    width: 31.5%;
+    background-image: url(../imgs/tablet/Games.jpg);
+  }  
+  .culture {
+    width: 65.8%;
+    margin-left: 20px;
+    background-image: url(../imgs/tablet/Culture.jpg);
+  }  
+  .relax {
+    width: 65.8%;
+    background-image: url(../imgs/tablet/relax.jpg);
+  }  
+  .traveling {
+    width: 31.5%;
+    margin-left: 20px;
+    background-image: url(../imgs/tablet/travelling.jpg);
+  }
+}
+@media screen and (min-width: 1320px) {
+    .holiday-activity-section {
+      .holiday-main-title h2{
+        padding: 89px 0 35px 0;
+      }
+    }    
+    .holiday-card-main-wrap {
+      width: 65%;
+      padding: 0;
+    }    
+    .holiday-card-wrap {
+      flex-direction: row;    
+      .holiday-card {
+        min-height: 310px;
+        margin-bottom: 20px;
+      }
+    }    
+    .sport {
+      width: 32.8%;
+      padding: 33px 47px;
+      background-image: url(../imgs/desctop/Sport.jpg);
+    }    
+    .health {
+      width: 32.8%;
+      padding: 33px 47px;
+      margin: 0 20px;
+      background-image: url(../imgs/desctop/health.jpg);
+    }    
+    .extreme {
+      width: 32.8%;
+      padding: 33px 47px;
+      background-image: url(../imgs/desctop/Extreme.jpg);
+    }    
+    .games {
+      width: 32.8%;
+      background-image: url(../imgs/desctop/Games.jpg);
+    }    
+    .culture {
+      width: 68.5%;
+      padding: 0 115px;
+      margin-left: 20px;
+      background-image: url(../imgs/desctop/Culture.jpg);
+    }    
+    .relax {
+      width: 68.5%;
+      background-image: url(../imgs/desctop/relax.jpg);
+    }    
+    .traveling {
+      width: 32.8%;
+      margin-left: 20px;
+      background-image: url(../imgs/desctop/traveling.jpg);
+    }
+}
+/*contact section*/
+.contact-section-wrap{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  h2{
+    padding: 35px 0 9px 0;
+    text-align: center;
+    @include font-style('Montserrat-bold', 22px, #444444)
+  }
+  h3{    
+    font-weight: 300;
+    text-align:center;
+    line-height: 14px;
+    @include font-style('Roboto-light', 14px, #666666)
+  }
+}
+.contact-form-and-btn-wrap{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0 40px 0 ;
+  input[name=form]{
+    width: 93%;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid #D4D4D4;
+    padding: 14px 0 10px 15px;
+    @include font-style('Roboto-light', 14px, #999999);
+    margin-bottom: 10px;
+  }
+  .contact-btn{
+    width: 93%;
+    padding: 12px 0 11px 0;
+    border: none;
+    border-radius: 40px;
+    background-color: $btn-bg;
+    line-height: 17px;
+    @include font-style('Montserrat-bold', 14px, #FFFFFF);
+  }
+}
+@media screen and (min-width:700px) {
+  .contact-section-wrap {
+    width: 63%;
+    padding: 0;  
+    h2 {
+      padding: 94px 0 43px 0;
+       @include font-style('Montserrat-bold', 22px, #444444)
+    }  
+    h3 {
+      font-weight: 300;
+      @include font-style('Roboto-light', 18px, #666666)
+    }
+  }  
+  .contact-form-and-btn-wrap {
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0 100px 0;
+    input[name=form] {
+      width: 63%;      
+      margin: 0 10px 0 0 ;
+    }  
+    .contact-btn {
+      width: 36%;     
+    }
+  }
+}
+@media screen and (min-width:1320px) {
+  .contact-section-wrap {
+    width: 63%;
+    padding: 0;  
+    h2 {
+      padding: 89px 0 43px 0;
+      @include font-style('Montserrat-bold', 22px, #444444)
+    }  
+    h3 {
+      @include font-style('Roboto-light', 18px, #666666)
+    }
+  }  
+  .contact-form-and-btn-wrap {
+    flex-direction: row;
+    justify-content: center;
+    margin: 25px 0 100px 0;  
+    input[name=form] {
+      width: 33%;      
+    }  
+    .contact-btn {
+      width: 19%;
+    }
+  }
+}
+/* footer section*/
+.footer-main-wrap{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 2px solid #FF4E50;
+  .logo{
+    margin: 19px 0 13px 0;
+    text-align: center;
+    @include font-style('Montserrat-regular', 16px, #FF4E50)
+  }
+}
+.footer-company-wrap{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h3{
+    @include font-style('Montserrat-bold', 14px, #444444)
+  }
+  ol{
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    li{
+      list-style: none;
+      line-height: 26px;
+      text-align: center;
+      padding: 5px;
+      cursor: pointer;
+      @include font-style('Roboto-light', 14px, #999999);
+    }
+  }
+}
+.partners h3{
+  line-height: 17px;
+  margin: 6px 0 14px 0;
+    @include font-style('Montserrat-bold', 14px, #444444);
+}
+.footer-logo{
+  width: 100%;
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h4{
+    letter-spacing: 1px;
+    line-height: 12px;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+    @include font-style('Montserrat-bold', 10px, #CCCCCC);
+  }
+}
+@media screen and (min-width:700px) {
+  .footer-main-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    border-top: 2px solid #FF4E50;
+    padding: 38px 37px 20px 37px;  
+    .logo {
+      margin: 0 108px 0 0;
+    }
+  }  
+  .footer-company-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+    h3 {
+      margin-bottom: 11px;     
+     }  
+    ol {
+      width: 62%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items:flex-start;  
+      li {        
+        text-align: left;
+        padding: 0;
+      }
+    }
+  }  
+  .partners h3 {
+    line-height: 26px;
+    margin: 0 0 56px 0;
+  }  
+  .footer-logo { 
+    align-items: flex-end;  
+  }
+}
+@media screen and (min-width: 1320px) {
+  .footer-main-wrap {    
+     padding: 38px 247px 36px 247px;  
+    .logo {
+      margin: 0 122px 0 0;
+    }
+  }  
+  .footer-company-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+    h3 {
+      margin-bottom: 11px;
+    }  
+    ol {
+      width: 62%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: flex-start;  
+      li {
+        text-align: left;
+        padding: 0;
+      }
+    }
+  }  
+  .partners h3 {
+    line-height: 26px;
+    margin: 0 287px 0 125px;
+  }  
+  .footer-logo {
+    width: 11%;
+    align-items: flex-end;
+  }
+}
